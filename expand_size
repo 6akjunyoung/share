@@ -1,0 +1,11 @@
+char	*expand_size(char *src, int *size)
+{
+	char *ret;
+
+	if (!(ret = (char*)malloc(*size << 1)))
+		exit(0);
+	ft_strncpy(ret, src, *size);
+	*size <<= 1;
+	free(src);
+	return (ret);
+}
