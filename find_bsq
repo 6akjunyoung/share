@@ -1,0 +1,19 @@
+t_square	*find_bsq(t_map *map)
+{
+	int			i;
+	int			**arr;
+	t_square	*square;
+
+	if (!(square = (t_square*)malloc(sizeof(t_square))))
+		exit(0);
+	arr = make_arr(map);
+	change_square(square, -1, -1, 0);
+	i = -1;
+	while (++i < map->y_len)
+		find_bsq_sub(i, map, arr, square);
+	i = 0;
+	while (i < map->y_len)
+		free(arr[i++]);
+	free(arr);
+	return (square);
+}

@@ -1,0 +1,25 @@
+t_map	*read_map(int fd, int stdin)
+{
+	char	*line;
+	int		idx;
+	t_map	*map;
+
+	stdin = 0;
+	if (!(map = (t_map*)malloc(sizeof(t_map))))
+		exit(0);
+	if (!parse_map_info(map, read_line(fd)))
+		return (0);
+	if (!(map->arr = (char**)malloc(sizeof(char*) * map->y_len)))
+		exit(0);
+	idx = 0;
+	map->x_len = 0;
+	while ((line = read_line(fd)))
+		if (!read_map_sub(&idx, map, line))
+			return (0);
+	if (idx != map->y_len)
+	{
+		free_map(map, idx);
+		return (0);
+	}
+	return (map);
+}

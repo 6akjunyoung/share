@@ -1,0 +1,10 @@
+int		ft_is_valid_map(char *line, t_map *map)
+{
+	while (*line)
+	{
+		if (*line != map->empty && *line != map->obstacle)
+			return (0);
+		++line;
+	}
+	return (1);
+}

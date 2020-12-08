@@ -1,0 +1,4 @@
+t_map	*read_stdin(void)
+{
+	return (read_map(0, 1));
+}

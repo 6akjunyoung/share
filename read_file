@@ -1,0 +1,8 @@
+t_map	*read_file(char *file)
+{
+	int fd;
+
+	if ((fd = open(file, O_RDONLY)) == -1)
+		return (0);
+	return (read_map(fd, 0));
+}

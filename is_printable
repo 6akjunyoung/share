@@ -1,0 +1,4 @@
+int		is_printable(char c)
+{
+	return (' ' <= c && c <= '~');
+}

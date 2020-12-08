@@ -1,0 +1,19 @@
+int		parse_map_info_sub(t_map *map, char *info)
+{
+	int len;
+
+	if (!info || (len = ft_strlen(info)) < 4)
+		return (0);
+	map->full = info[len - 1];
+	map->obstacle = info[len - 2];
+	map->empty = info[len - 3];
+	if (map->empty == map->obstacle ||
+		map->empty == map->full ||
+		map->obstacle == map->full ||
+		!is_valid_map_info(map))
+		return (0);
+	info[len - 3] = 0;
+	if (!(map->y_len = ft_atoi(info)))
+		return (0);
+	return (1);
+}

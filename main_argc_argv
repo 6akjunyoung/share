@@ -1,0 +1,14 @@
+int		main(int argc, char *argv[])
+{
+	int i;
+
+	if (argc == 1)
+		bsq(0);
+	else
+	{
+		i = 0;
+		while (++i < argc)
+			bsq(argv[i]);
+	}
+	return (0);
+}

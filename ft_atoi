@@ -1,0 +1,17 @@
+int		ft_atoi(char *str)
+{
+	int num;
+
+	if (*str == '0')
+		return (0);
+	num = 0;
+	while (*str)
+	{
+		if (!ft_is_number(*str))
+			return (0);
+		num *= 10;
+		num += (*str - '0');
+		++str;
+	}
+	return (num);
+}

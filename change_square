@@ -1,0 +1,6 @@
+void		change_square(t_square *square, int x, int y, int len)
+{
+	square->x = x;
+	square->y = y;
+	square->len = len;
+}

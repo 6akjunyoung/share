@@ -1,0 +1,19 @@
+void		find_bsq_sub(int i, t_map *map, int **arr, t_square *square)
+{
+	int j;
+	int	len;
+
+	j = -1;
+	while (++j < map->x_len)
+	{
+		if (i == 0 || j == 0)
+			if (cmp(square->len, arr[i][j]))
+				change_square(square, j, i, arr[i][j]);
+		if (i == 0 || j == 0)
+			continue;
+		if (arr[i][j] == 1)
+			if (cmp(square->len, len = check_square(arr, i, j)))
+				change_square(square, j, i, len);
+	}
+}
+

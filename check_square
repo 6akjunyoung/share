@@ -1,0 +1,8 @@
+int			check_square(int **arr, int i, int j)
+{
+	int	min;
+
+	min = ft_min(arr[i - 1][j], arr[i - 1][j - 1], arr[i][j - 1]);
+	arr[i][j] = min + 1;
+	return (min + 1);
+}

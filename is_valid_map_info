@@ -1,0 +1,6 @@
+int		is_valid_map_info(t_map *map)
+{
+	return (is_printable(map->full) &&
+			is_printable(map->obstacle) &&
+			is_printable(map->empty));
+}
